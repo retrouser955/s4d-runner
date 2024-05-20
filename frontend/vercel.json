@@ -1,5 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/run.html", "destination": "./run.html" }
-    ]
-  }
