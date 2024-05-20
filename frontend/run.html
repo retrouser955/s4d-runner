@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scratch For Discord Runner</title>
+    <link rel="stylesheet" href="src/runner/css/runner.css">
+</head>
+<body>
+    <div class="wrapper">
+        <p>Input the required information</p>
+        <div class="info">
+            <div class="code-wrapper">
+                <p style="font-size: 20px;">index.js</p>
+                <textarea name="code" id="code"></textarea>
+            </div>
+            <div class="code-wrapper">
+                <p style="font-size: 20px;">.env</p>
+                <textarea name="env" id="env"></textarea>
+            </div>
+        </div>
+        <button id="run">Run</button>
+    </div>
+    <script src="src/main.ts"></script>
+</body>
+</html>
