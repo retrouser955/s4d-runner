@@ -1,6 +1,6 @@
 {
   "name": "s4d-runner-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A CLI tool to run scratch for discord bots ",
   "main": "bin/index.js",
   "repository": "https://github.com/retrouser955/s4d-runner-cli",
