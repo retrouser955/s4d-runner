@@ -19,7 +19,7 @@ export default function Run() {
                             <div className="code-wrapper">
                                 <p style={{
                                     fontSize: "20px"
-                                }}>index.js</p>
+                                }}>Code</p>
                                 <textarea name="code" id="code" onChange={(e) => setCode(e.target.value)} autoCorrect={"off"}></textarea>
                             </div>
                             <div className="code-wrapper">
