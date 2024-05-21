@@ -90,11 +90,15 @@ program
 
                 await new Promise((resolve, reject) => {
                     const install = spawn('npm', ['install'], {
-                        cwd: botDir
+                        cwd: botDir,
+                        env: {
+                            FORCE_COLOR: 2,
+                            ...process.env
+                        }
                     })
 
                     install.stdout.on("data", (d) => {
-                        installSpinner.text = "Installing packages: " + d.toString()
+                        ws.send(d.toString())
                     })
 
                     install.on("exit", (code) => {
@@ -109,18 +113,26 @@ program
                 installSpinner.succeed("Finished installing packages. Started node process!")
 
                 const startProcess = spawn("node", ['index.js'], {
-                    cwd: botDir
+                    cwd: botDir,
+                    env: {
+                        FORCE_COLOR: 2,
+                        ...process.env
+                    }
                 })
 
                 debug(`Process running on ${startProcess.pid}`)
 
+                startProcess.on("error", (e) => {
+                    console.log("GOT ERROR: " + e)
+                })
+
                 startProcess.on("exit", (code) => {
                     if (code !== 0) {
-                        throw new Error("Bot crashed!")
+                        throw new Error("The bot crashed or it was stopped manually")
                     }
                 })
 
-                startProcess.stdout.on("data", (d) => {
+                startProcess.stdout.on('data', (d) => {
                     ws.send(d.toString())
                 })
 

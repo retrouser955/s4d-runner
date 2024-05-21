@@ -1,0 +1,8 @@
+{
+  "workspaces": [
+    "monorepos/*"
+  ],
+  "name": "s4d-runner",
+  "packageManager": "yarn@4.0.2",
+  "private": true
+}

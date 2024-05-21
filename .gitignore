@@ -1,2 +1,9 @@
-cli/node_modules
-frontend/node_modules
+monorepos/cli/node_modules
+monorepos/cli/bot
+monorepos/frontend/node_modules
+yarn-error.log
+node_modules
+
+# yarn cache
+.yarn/cache
+.yarn/install-state.gz
